@@ -28,19 +28,15 @@ pick_events = getHeppyOption('pick_events', False)
 syncntuple = getHeppyOption('syncntuple', True)
 cmssw = getHeppyOption('cmssw', True)
 computeSVfit = getHeppyOption('computeSVfit', False)
-data = getHeppyOption('data', False)
+data = getHeppyOption('data', True)
 reapplyJEC = getHeppyOption('reapplyJEC', True)
-
-
-# When ready, include weights from CMGTools.H2TauTau.proto.weights.weighttable
-mc_tauEffWeight_mc = None
-mc_muEffWeight_mc = None
-mc_tauEffWeight = None
-mc_muEffWeight = None
 
 dyJetsFakeAna.channel = 'mm'
 
-# Define mu-tau specific modules
+# Just to be sure
+if production:
+    syncntuple = False
+    pick_events = False
 
 if reapplyJEC:
     if cmssw:
@@ -48,6 +44,8 @@ if reapplyJEC:
         dyJetsFakeAna.jetCol = 'patJetsReapplyJEC'
     else:
         jetAna.recalibrateJets = True
+
+# Define mu-mu specific modules
 
 MuMuAna = cfg.Analyzer(
     MuMuAnalyzer,
@@ -144,6 +142,7 @@ for mc in samples:
 
 selectedComponents = samples
 selectedComponents = data_list if data else samples
+selectedComponents = [c for c in selectedComponents if '2016G' in c.name]
 
 sequence = commonSequence
 sequence.insert(sequence.index(dyJetsFakeAna), MuMuAna)
@@ -165,12 +164,13 @@ if not cmssw:
 
 if not production:
     # comp = [b for b in backgrounds_mu if b.name == 'DYJetsToLL_M50_LO'][0]
-    comp = data_list[0] if data else sync_list[0]
+    # comp = data_list[0] if data else sync_list[0]
+    comp = selectedComponents[0]
     selectedComponents = [comp]
     comp.splitFactor = 1
     # comp.files = comp.files[14:16]
 
-# autoAAA(selectedComponents)
+autoAAA(selectedComponents)
 
 preprocessor = None
 if cmssw:
