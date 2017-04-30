@@ -3,7 +3,6 @@ import ROOT
 import array
 from collections import OrderedDict
 
-from PhysicsTools.HeppyCore.statistics.counter import Counters
 from PhysicsTools.HeppyCore.utils.deltar import matchObjectCollection
 from PhysicsTools.HeppyCore.utils.deltar import deltaR
 from PhysicsTools.Heppy.analyzers.core.AutoHandle import AutoHandle
@@ -20,7 +19,7 @@ class TauTauAnalyzer(DiLeptonAnalyzer):
     DiObjectClass = TauTau
     LeptonClass = Electron
     OtherLeptonClass = Muon
-    
+  
     def __init__(self, cfg_ana, cfg_comp, looperName):
         super(TauTauAnalyzer, self).__init__(cfg_ana, cfg_comp, looperName)
 
@@ -97,7 +96,6 @@ class TauTauAnalyzer(DiLeptonAnalyzer):
             'std::vector<l1extra::L1JetParticle>'   
         )
 
-
     def process(self, event):
 
         # method inherited from parent class DiLeptonAnalyzer
@@ -154,8 +152,11 @@ class TauTauAnalyzer(DiLeptonAnalyzer):
             pydil = TauTau(dil, iso=self.cfg_ana.isolation)
             pydil.leg1().associatedVertex = event.goodVertices[0]
             pydil.leg2().associatedVertex = event.goodVertices[0]
+            pydil.leg1().event = event.input.object()
+            pydil.leg2().event = event.input.object()
             diLeptons.append(pydil)
             pydil.mvaMetSig = pydil.met().getSignificanceMatrix()
+
         return diLeptons
 
     def buildDiLeptonsSingle(self, leptons, event):
@@ -180,6 +181,8 @@ class TauTauAnalyzer(DiLeptonAnalyzer):
                     di_tau = DirectTauTau(Tau(leg1), Tau(leg2), met)
                     di_tau.leg2().associatedVertex = event.goodVertices[0]
                     di_tau.leg1().associatedVertex = event.goodVertices[0]
+                    di_tau.leg1().event = event.input.object()
+                    di_tau.leg2().event = event.input.object()
                     di_tau.mvaMetSig = None
                     di_objects.append(di_tau)
         return di_objects
@@ -191,7 +194,8 @@ class TauTauAnalyzer(DiLeptonAnalyzer):
         for index, lep in enumerate(cmgLeptons):
             pyl = Muon(lep)
             pyl.associatedVertex = event.goodVertices[0]
-            if not pyl.muonID('POG_ID_Medium_ICHEP'):
+            pyl.event = event.input.object()
+            if not pyl.muonIDMoriond17():
                 continue
             if not pyl.relIsoR(R=0.4, dBetaFactor=0.5, allCharged=0) < 0.3:
                 continue
@@ -207,8 +211,8 @@ class TauTauAnalyzer(DiLeptonAnalyzer):
             pyl = Electron(lep)
             pyl.associatedVertex = event.goodVertices[0]
             pyl.rho = event.rho
-            pyl.event = event
-            if not pyl.mvaIDRun2('NonTrigSpring15MiniAOD', 'POG90'):
+            pyl.event = event.input.object()
+            if not pyl.mvaIDRun2('Spring16', 'POG90'):
                 continue
             if not pyl.relIsoR(R=0.3, dBetaFactor=0.5, allCharged=0) < 0.3:
                 continue
@@ -261,7 +265,7 @@ class TauTauAnalyzer(DiLeptonAnalyzer):
         return len(muons) == 0
 
     def trigMatched(self, event, diL, requireAllMatched=False):
-        matched = super(TauTauAnalyzer, self).trigMatched(event, diL, requireAllMatched=requireAllMatched, checkBothLegs=True)
+        matched = super(TauTauAnalyzer, self).trigMatched(event, diL, requireAllMatched=requireAllMatched)
 
         # Not needed in 2016, for the moment
         
@@ -329,8 +333,6 @@ class TauTauAnalyzer(DiLeptonAnalyzer):
         # in that case the least isolated is the one with the lowest MVAscore
         # if osDiLeptons : return sorted(osDiLeptons, key=lambda dl : least_iso(dl), reverse=False)[0]
         # else           :
-
-        # import pdb; pdb.set_trace()
 
         return sorted(diLeptons, key=lambda dl: least_iso_highest_pt(dl), reverse=False)[0]
 
