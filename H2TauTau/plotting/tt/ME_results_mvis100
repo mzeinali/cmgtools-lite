@@ -1,0 +1,80 @@
+[mzeinali@UI src]$ root SMS_Counting.C 
+root [0] 
+Processing SMS_Counting.C...
+Number of initial entries: 2810031
+sr1, up ME variations: 
+**** (200,100): 0 +- 0
+**** (250,50): 9.79749 +- 1.50232
+**** (400,1): 8.24322 +- 0.536733
+root [1] .q
+[mzeinali@UI src]$ vi SMS_Counting.C
+[mzeinali@UI src]$ root SMS_Counting.C
+root [0] 
+Processing SMS_Counting.C...
+Number of initial entries: 2810031
+sr2, up ME variations: 
+**** (200,100): 0.448672 +- 0.448672
+**** (250,50): 6.87473 +- 1.18882
+**** (400,1): 9.38742 +- 0.769396
+root [1] .q
+[mzeinali@UI src]$ vi SMS_Counting.C
+[mzeinali@UI src]$ root SMS_Counting.C
+root [0] 
+Processing SMS_Counting.C...
+Number of initial entries: 2810031
+sr3, up ME variations: 
+**** (200,100): 3.04617 +- 1.14707
+**** (250,50): 11.4416 +- 1.71925
+**** (400,1): 4.05687 +- 0.43969
+root [1] .q
+[mzeinali@UI src]$ vi SMS_Counting.C
+[mzeinali@UI src]$ root SMS_Counting.C
+root [0] 
+Processing SMS_Counting.C...
+Number of initial entries: 2810031
+sr4, up ME variations: 
+**** (200,100): 2.47865 +- 1.03076
+**** (250,50): 6.51921 +- 1.21129
+**** (400,1): 4.39764 +- 0.497147
+root [1] .q
+[mzeinali@UI src]$ vi SMS_Counting.C
+[mzeinali@UI src]$ root SMS_Counting.C
+root [0] 
+Processing SMS_Counting.C...
+Number of initial entries: 2810031
+sr1, down ME variations: 
+**** (200,100): 0 +- 0
+**** (250,50): 10.4158 +- 1.60025
+**** (400,1): 9.0786 +- 0.591412
+root [1] .q
+[mzeinali@UI src]$ vi SMS_Counting.C
+[mzeinali@UI src]$ root SMS_Counting.C
+root [0] 
+Processing SMS_Counting.C...
+Number of initial entries: 2810031
+sr2, down ME variations: 
+**** (200,100): 0.532483 +- 0.532483
+**** (250,50): 7.49795 +- 1.29211
+**** (400,1): 10.5638 +- 0.859583
+root [1] .q
+[mzeinali@UI src]$ vi SMS_Counting.C
+[mzeinali@UI src]$ root SMS_Counting.C
+root [0] 
+Processing SMS_Counting.C...
+Number of initial entries: 2810031
+sr3, down ME variations: 
+**** (200,100): 3.41783 +- 1.28994
+**** (250,50): 12.3831 +- 1.86336
+**** (400,1): 4.52491 +- 0.487882
+root [1] .q
+[mzeinali@UI src]$ vi SMS_Counting.C
+[mzeinali@UI src]$ root SMS_Counting.C
+root [0] 
+Processing SMS_Counting.C...
+Number of initial entries: 2810031
+sr4, down ME variations: 
+**** (200,100): 2.83128 +- 1.16287
+**** (250,50): 7.18983 +- 1.33925
+**** (400,1): 5.02118 +- 0.558134
+root [1] .q
+

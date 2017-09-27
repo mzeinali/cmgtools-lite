@@ -1,0 +1,96 @@
+Histograms:
+	 data_obs   / data_obs                                          ,	 Layer =  2999.0, w = 1595781.0, u = 1595781.0
+	 SMS_200_100 / SMS_TChipmStauSnuMStau200MChi100                  ,	 Layer =  1001.0, w =    264.0, u =    377.5
+	 SMS_250_50 / SMS_TChipmStauSnuMStau250MChi50                   ,	 Layer =  1001.0, w =    356.5, u =   1219.4
+	 SMS_400_1  / SMS_TChipmStauSnuMStau400MChi1                    ,	 Layer =  1001.0, w =    129.9, u =   2814.6
+	 W          / W1Jets,W2Jets,W3Jets,W4Jets                       ,	 Layer =     3.0, w =  19187.1, u =   5948.0
+	 FakeEstimation / N_0t_region,N_1t_region,N_2t_region               ,	 Layer =     2.0, w =  15990.3, u = 241636.0
+	 DYJets     / ZTT,ZTT1Jets,ZTT2Jets,ZTT3Jets,ZTT4Jets           ,	 Layer =     1.5, w =  20261.8, u =      0.6
+	 TT         / TT,T_tWch,TBar_tWch,TToLeptons_tch_powheg,TBarToLeptons_tch_powheg,	 Layer =     1.0, w =   1026.1, u =   2995.7
+	 VV         / VVTo2L2Nu,ZZTo2L2Q,WWTo1L1Nu2Q,WZTo1L3Nu,ZZTo4L,WZTo2L2Q,WZTo1L1Nu2Q,	 Layer =     0.7, w =     21.2, u =  13593.0
+Stack yield = 56486.5
+)))))) hist.name:  VV
+)))))) hist.integral weighted:  21.2415478112
+)))))) hist.integral unweighted:  13593.0232589
+         -->> entries found:  28538.0
+         w:  21.2415478112  and error:  0.318397233594
+         u:  13593.0232589  and error:  157.288009778
+)))))) hist.name:  TT
+)))))) hist.integral weighted:  1026.10215434
+)))))) hist.integral unweighted:  2995.69964498
+         -->> entries found:  3588.0
+         w:  1026.10215434  and error:  18.1972897994
+         u:  2995.69964498  and error:  51.9504205616
+)))))) hist.name:  DYJets
+)))))) hist.integral weighted:  20261.7768369
+)))))) hist.integral unweighted:  0.564394898494
+         -->> entries found:  32994.0
+         w:  20261.7768369  and error:  130.959022364
+         u:  0.564394898494  and error:  0.0036478836313
+)))))) hist.name:  FakeEstimation
+)))))) hist.integral weighted:  15990.2564189
+)))))) hist.integral unweighted:  241636.0
+         -->> entries found:  241636.0
+         w:  15990.2564189  and error:  191.910219845
+         u:  241636.0  and error:  491.564848214
+)))))) hist.name:  W
+)))))) hist.integral weighted:  19187.1145717
+)))))) hist.integral unweighted:  5947.98983645
+         -->> entries found:  5849.0
+         w:  19187.1145717  and error:  311.557008651
+         u:  5947.98983645  and error:  81.0153364544
+)))))) hist.name:  SMS_400_1
+)))))) hist.integral weighted:  129.897548189
+)))))) hist.integral unweighted:  2814.556427
+         -->> entries found:  4449.0
+         w:  129.897548189  and error:  2.66245798641
+         u:  2814.556427  and error:  57.6888362522
+)))))) hist.name:  SMS_250_50
+)))))) hist.integral weighted:  356.505096465
+)))))) hist.integral unweighted:  1219.35892218
+         -->> entries found:  2102.0
+         w:  356.505096465  and error:  10.2136582956
+         u:  1219.35892218  and error:  34.9339052688
+)))))) hist.name:  SMS_200_100
+)))))) hist.integral weighted:  263.983081922
+)))))) hist.integral unweighted:  377.494296372
+         -->> entries found:  717.0
+         w:  263.983081922  and error:  12.297230158
+         u:  377.494296372  and error:  17.5849690088
+)))))) hist.name:  data_obs
+)))))) hist.integral weighted:  1595781.0
+)))))) hist.integral unweighted:  1595781.0
+         -->> entries found:  1595781.0
+         w:  1595781.0  and error:  1263.24225705
+         u:  1595781.0  and error:  1263.24225705
+)))))) hist.name:  VV
+)))))) hist.integral weighted:  21.2415478112
+)))))) hist.integral unweighted:  13593.0232589
+         -->> entries found:  28538.0
+         w:  21.2415478112  and error:  0.318397233594
+         u:  13593.0232589  and error:  157.288009778
+)))))) hist.name:  TT
+)))))) hist.integral weighted:  1026.10215434
+)))))) hist.integral unweighted:  2995.69964498
+         -->> entries found:  3588.0
+         w:  1026.10215434  and error:  18.1972897994
+         u:  2995.69964498  and error:  51.9504205616
+)))))) hist.name:  DYJets
+)))))) hist.integral weighted:  20261.7768369
+)))))) hist.integral unweighted:  0.564394898494
+         -->> entries found:  32994.0
+         w:  20261.7768369  and error:  130.959022364
+         u:  0.564394898494  and error:  0.0036478836313
+)))))) hist.name:  FakeEstimation
+)))))) hist.integral weighted:  15990.2564189
+)))))) hist.integral unweighted:  241636.0
+         -->> entries found:  241636.0
+         w:  15990.2564189  and error:  191.910219845
+         u:  241636.0  and error:  491.564848214
+)))))) hist.name:  W
+)))))) hist.integral weighted:  19187.1145717
+)))))) hist.integral unweighted:  5947.98983645
+         -->> entries found:  5849.0
+         w:  19187.1145717  and error:  311.557008651
+         u:  5947.98983645  and error:  81.0153364544
+

@@ -107,7 +107,8 @@ class HistDrawer:
              plot_name=None, SetLogy=0, 
              blindxmin=None, blindxmax=None, unit=None):
         print plot
-        Stack.STAT_ERRORS = True
+        Stack.STAT_ERRORS = False
+        #Stack.STAT_ERRORS = True
 
         can = pad = padr = None
 
@@ -189,11 +190,13 @@ class HistDrawer:
         ensureDir(plot_dir)
         plotname += plot_name if plot_name else plot.name
         can.SaveAs(plotname + '.png')
+        can.SaveAs(plotname + '.C')
         can.SaveAs(plotname + '.pdf')
-        can.SaveAs(plotname + '.root')
+        #can.SaveAs(plotname + '.root')
 
         # Also save with log y
-        h.GetYaxis().SetRangeUser(pad.GetUymax() * 5./1000000., pad.GetUymax() * 5.)
+        #h.GetYaxis().SetRangeUser(pad.GetUymax() * 5./1000000., pad.GetUymax() * 5.)
+        h.GetYaxis().SetRangeUser(0.05, pad.GetUymax() * 5.)
         pad.SetLogy(True)
         can.SaveAs(plotname + '_log.png')
         can.SaveAs(plotname + '_log.pdf')

@@ -1,0 +1,83 @@
+Histograms:
+	 data_obs   / data_obs                                          ,	 Layer =  2999.0, w =      7.0, u =      7.0
+	 SMS_200_100 / SMS_TChipmStauSnuMStau200MChi100                  ,	 Layer =  1001.0, w =      2.9, u =      4.1
+	 SMS_250_50 / SMS_TChipmStauSnuMStau250MChi50                   ,	 Layer =  1001.0, w =      7.3, u =     24.9
+	 SMS_400_1  / SMS_TChipmStauSnuMStau400MChi1                    ,	 Layer =  1001.0, w =      4.7, u =    100.8
+	 FakeEstimation / N_0t_region,N_1t_region,N_2t_region               ,	 Layer =     2.0, w =      6.7, u =     69.0
+	 DYJets     / ZTT,ZTT1Jets,ZTT2Jets,ZTT3Jets,ZTT4Jets           ,	 Layer =     1.5, w =      5.4, u =      0.0
+	 TT         / TT,T_tWch,TBar_tWch,TToLeptons_tch_powheg,TBarToLeptons_tch_powheg,	 Layer =     1.0, w =      1.6, u =      5.8
+	 VV         / VVTo2L2Nu,ZZTo2L2Q,WWTo1L1Nu2Q,WZTo1L3Nu,ZZTo4L,WZTo2L2Q,WZTo1L1Nu2Q,	 Layer =     0.7, w =     -0.0, u =      1.3
+Stack yield =    13.7
+)))))) hist.name:  VV
+)))))) hist.integral weighted:  -0.0217465615424
+)))))) hist.integral unweighted:  1.33438801765
+         -->> entries found:  27.0
+         w:  -0.0217465615424  and error:  0.0237059447749
+         u:  1.33438801765  and error:  5.24291154999
+)))))) hist.name:  TT
+)))))) hist.integral weighted:  1.64275790006
+)))))) hist.integral unweighted:  5.7790749073
+         -->> entries found:  8.0
+         w:  1.64275790006  and error:  0.664552517392
+         u:  5.7790749073  and error:  2.2769863658
+)))))) hist.name:  DYJets
+)))))) hist.integral weighted:  5.41125099361
+)))))) hist.integral unweighted:  0.000150731226768
+         -->> entries found:  9.0
+         w:  5.41125099361  and error:  1.87701571724
+         u:  0.000150731226768  and error:  5.22845603689e-05
+)))))) hist.name:  FakeEstimation
+)))))) hist.integral weighted:  6.71194696426
+)))))) hist.integral unweighted:  69.0
+         -->> entries found:  69.0
+         w:  6.71194696426  and error:  3.33828353255
+         u:  69.0  and error:  8.30662386292
+)))))) hist.name:  SMS_400_1
+)))))) hist.integral weighted:  4.65276715904
+)))))) hist.integral unweighted:  100.813882232
+         -->> entries found:  129.0
+         w:  4.65276715904  and error:  0.523998467689
+         u:  100.813882232  and error:  11.3537422762
+)))))) hist.name:  SMS_250_50
+)))))) hist.integral weighted:  7.27825099928
+)))))) hist.integral unweighted:  24.8938942831
+         -->> entries found:  40.0
+         w:  7.27825099928  and error:  1.30826420131
+         u:  24.8938942831  and error:  4.47467267383
+)))))) hist.name:  SMS_200_100
+)))))) hist.integral weighted:  2.87407340109
+)))))) hist.integral unweighted:  4.10990865529
+         -->> entries found:  9.0
+         w:  2.87407340109  and error:  1.12636091979
+         u:  4.10990865529  and error:  1.61068969295
+)))))) hist.name:  data_obs
+)))))) hist.integral weighted:  7.0
+)))))) hist.integral unweighted:  7.0
+         -->> entries found:  7.0
+         w:  7.0  and error:  2.64575131106
+         u:  7.0  and error:  2.64575131106
+)))))) hist.name:  VV
+)))))) hist.integral weighted:  -0.0217465615424
+)))))) hist.integral unweighted:  1.33438801765
+         -->> entries found:  27.0
+         w:  -0.0217465615424  and error:  0.0237059447749
+         u:  1.33438801765  and error:  5.24291154999
+)))))) hist.name:  TT
+)))))) hist.integral weighted:  1.64275790006
+)))))) hist.integral unweighted:  5.7790749073
+         -->> entries found:  8.0
+         w:  1.64275790006  and error:  0.664552517392
+         u:  5.7790749073  and error:  2.2769863658
+)))))) hist.name:  DYJets
+)))))) hist.integral weighted:  5.41125099361
+)))))) hist.integral unweighted:  0.000150731226768
+         -->> entries found:  9.0
+         w:  5.41125099361  and error:  1.87701571724
+         u:  0.000150731226768  and error:  5.22845603689e-05
+)))))) hist.name:  FakeEstimation
+)))))) hist.integral weighted:  6.71194696426
+)))))) hist.integral unweighted:  69.0
+         -->> entries found:  69.0
+         w:  6.71194696426  and error:  3.33828353255
+         u:  69.0  and error:  8.30662386292
+

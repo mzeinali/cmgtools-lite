@@ -1,0 +1,87 @@
+stograms:
+	 data_obs   / data_obs                                          ,	 Layer =  2999.0, w =      1.0, u =      1.0
+	 SMS_200_100 / SMS_TChipmStauSnuMStau200MChi100                  ,	 Layer =  1001.0, w =      0.0, u =      0.0
+	 SMS_250_50 / SMS_TChipmStauSnuMStau250MChi50                   ,	 Layer =  1001.0, w =     10.1, u =     34.6
+	 SMS_400_1  / SMS_TChipmStauSnuMStau400MChi1                    ,	 Layer =  1001.0, w =      8.6, u =    186.8
+	 FakeEstimation / N_0t_region,N_1t_region,N_2t_region               ,	 Layer =     2.0, w =     -0.6, u =      2.0
+	 DYJets     / ZTT,ZTT1Jets,ZTT2Jets,ZTT3Jets,ZTT4Jets           ,	 Layer =     1.5, w =      0.0, u =      0.0
+	 TT         / TT,T_tWch,TBar_tWch,TToLeptons_tch_powheg,TBarToLeptons_tch_powheg,	 Layer =     1.0, w =      0.0, u =      0.0
+	 VV         / VVTo2L2Nu,ZZTo2L2Q,WWTo1L1Nu2Q,WZTo1L3Nu,ZZTo4L,WZTo2L2Q,WZTo1L1Nu2Q,	 Layer =     0.7, w =      0.0, u =      3.1
+Stack yield =    -0.6
+)))))) hist.name:  VV
+)))))) hist.integral weighted:  0.0211934498511
+)))))) hist.integral unweighted:  3.11843597889
+         -->> entries found:  3.0
+         w:  0.0211934498511  and error:  0.0122376388604
+         u:  3.11843597889  and error:  1.80066452459
+)))))) hist.name:  TT
+)))))) hist.integral weighted:  0.0
+)))))) hist.integral unweighted:  0.0
+         -->> entries found:  0.0
+         w:  0.0  and error:  0.0
+         u:  0.0  and error:  0.0
+)))))) hist.name:  DYJets
+)))))) hist.integral weighted:  0.0
+)))))) hist.integral unweighted:  0.0
+         -->> entries found:  0.0
+         w:  0.0  and error:  0.0
+         u:  0.0  and error:  0.0
+)))))) hist.name:  FakeEstimation
+)))))) hist.integral weighted:  -0.608734369278
+)))))) hist.integral unweighted:  2.0
+         -->> entries found:  2.0
+         w:  -0.608734369278  and error:  0.452542901734
+         u:  2.0  and error:  1.41421356237
+)))))) hist.name:  SMS_400_1
+)))))) hist.integral weighted:  8.62053602934
+)))))) hist.integral unweighted:  186.785554409
+         -->> entries found:  280.0
+         w:  8.62053602934  and error:  0.562421485968
+         u:  186.785554409  and error:  12.1862734264
+)))))) hist.name:  SMS_250_50
+)))))) hist.integral weighted:  10.1057292223
+)))))) hist.integral unweighted:  34.5647539496
+         -->> entries found:  50.0
+         w:  10.1057292223  and error:  1.55066708749
+         u:  34.5647539496  and error:  5.30376634602
+)))))) hist.name:  SMS_200_100
+)))))) hist.integral weighted:  0.0
+)))))) hist.integral unweighted:  0.0
+         -->> entries found:  0.0
+         w:  0.0  and error:  0.0
+         u:  0.0  and error:  0.0
+)))))) hist.name:  data_obs
+)))))) hist.integral weighted:  1.0
+)))))) hist.integral unweighted:  1.0
+         -->> entries found:  1.0
+         w:  1.0  and error:  1.0
+         u:  1.0  and error:  1.0
+)))))) hist.name:  VV
+)))))) hist.integral weighted:  0.0211934498511
+)))))) hist.integral unweighted:  3.11843597889
+         -->> entries found:  3.0
+         w:  0.0211934498511  and error:  0.0122376388604
+         u:  3.11843597889  and error:  1.80066452459
+)))))) hist.name:  TT
+)))))) hist.integral weighted:  0.0
+)))))) hist.integral unweighted:  0.0
+         -->> entries found:  0.0
+         w:  0.0  and error:  0.0
+         u:  0.0  and error:  0.0
+)))))) hist.name:  DYJets
+)))))) hist.integral weighted:  0.0
+)))))) hist.integral unweighted:  0.0
+         -->> entries found:  0.0
+         w:  0.0  and error:  0.0
+         u:  0.0  and error:  0.0
+)))))) hist.name:  FakeEstimation
+)))))) hist.integral weighted:  -0.608734369278
+)))))) hist.integral unweighted:  2.0
+         -->> entries found:  2.0
+         w:  -0.608734369278  and error:  0.452542901734
+         u:  2.0  and error:  1.41421356237
+
+
+
+**********************  (((((((((!veto_dilepton && !veto_thirdlepton && !veto_otherlepton) && ((trigger_ditau35 && trigger_matched_ditau35) || (trigger_ditau35_combiso && trigger_matched_ditau35_combiso))) && (l1_againstMuon3>0.5 && l1_againstElectronMVA6>0.5 && l1_pt>40 && abs(l1_eta)<2.1)) && (l2_againstMuon3>0.5 && l2_againstElectronMVA6>0.5 && l2_pt>40 && abs(l2_eta)<2.1)) && (Flag_HBHENoiseFilter && Flag_HBHENoiseIsoFilter && Flag_EcalDeadCellTriggerPrimitiveFilter && Flag_goodVertices && Flag_eeBadScFilter && Flag_globalTightHalo2016Filter && passBadMuonFilter && passBadChargedHadronFilter && badMuonMoriond2017 && badCloneMuonMoriond2017)) && (l1_charge != l2_charge)) && (pfmet_pt > 30 && mvis > 100 && mt2 > 20)) && (mt2 > 90)) && (n_jets == 0)) && ((l1_byIsolationMVArun2v1DBoldDMwLT>4.5) && (l2_byIsolationMVArun2v1DBoldDMwLT>4.5))
+

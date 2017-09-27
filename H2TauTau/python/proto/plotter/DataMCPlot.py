@@ -255,7 +255,8 @@ class DataMCPlot(object):
         # self.lastDraw = 'DrawRatio'
         # self.lastDrawArgs = [ opt ]
 
-    def DrawDataOverMCMinus1(self, ymin=-0.5, ymax=0.5):
+    ##def DrawDataOverMCMinus1(self, ymin=-0.5, ymax=0.5): ## commented on Aug 30 by maryam
+    def DrawDataOverMCMinus1(self, ymin=-1.0, ymax=1.0):
         stackedHists = []
         dataHist = None
         for hist in self._SortedHistograms():
@@ -265,15 +266,20 @@ class DataMCPlot(object):
             stackedHists.append(hist)
         self._BuildStack(stackedHists, ytitle='Data/MC')
         mcHist = self.BGHist()
+	##self.MCOverMCHist = copy.deepcopy(mcHist)
+        ##self.MCOverMCHist.Divide(mcHist)
+	##self.MCOverMCHist.Draw('E2')
         self.dataOverMCHist = copy.deepcopy(dataHist)
         # self.dataOverMCHist.Add(mcHist, -1)
         self.dataOverMCHist.Divide(mcHist)
         self.dataOverMCHist.Draw()
+        ##self.dataOverMCHist.Draw('same')
         yaxis = self.dataOverMCHist.GetYaxis()
         yaxis.SetRangeUser(ymin + 1., ymax + 1.)
         yaxis.SetTitle('Data/MC')
         yaxis.SetNdivisions(5)
-        fraclines = 0.2
+        #fraclines = 0.2
+        fraclines = 0.5 ## commented on Aug 20
         if ymax <= 0.2 or ymin >= -0.2:
             fraclines = 0.1
         self.DrawRatioLines(self.dataOverMCHist, fraclines, 1.)
@@ -362,9 +368,9 @@ class DataMCPlot(object):
         xmax = hist.obj.GetXaxis().GetXmax()
         line = TLine()
         line.DrawLine(xmin, y0, xmax, y0)
-        line.SetLineStyle(2)
-        line.DrawLine(xmin, y0+frac, xmax, y0+frac)
-        line.DrawLine(xmin, y0-frac, xmax, y0-frac)
+        ##line.SetLineStyle(2)  ## comment these lines on Aug 20
+        ##line.DrawLine(xmin, y0+frac, xmax, y0+frac)
+        ##line.DrawLine(xmin, y0-frac, xmax, y0-frac)
 
     def GetStack(self):
         '''Returns stack; builds stack if not there yet'''
@@ -498,13 +504,32 @@ class DataMCPlot(object):
 
         The histograms for which Histogram.stack is False are put in self.nostack'''
         self.stack = None
+	#hBkg = None
         self.stack = Stack(self.name+'_stack', ytitle=ytitle)
         self.nostack = []
         for hist in hists:
             if hist.stack:
                 self.stack.Add(hist)
+		#if hBkg is None:
+		#	hBkg = hist.Clone("Bkg")
+		#else:
+		#	hBkg.Add(hist)
             else:
                 self.nostack.append(hist)
+	    print ')))))) hist.name: ', hist.name
+            print ')))))) hist.integral weighted: ', hist.Integral()
+            print ')))))) hist.integral unweighted: ', hist.Integral(weighted=False)
+            import ROOT
+            err = ROOT.Double(0)
+            print '         -->> entries found: ', hist.obj.GetEntries()
+            yields = hist.weighted.IntegralAndError(0,hist.obj.GetNbinsX()+1,err)
+            print '         w: ', yields, ' and error: ', err
+            yields = hist.obj.IntegralAndError(0,hist.obj.GetNbinsX()+1,err)
+            print '         u: ', yields, ' and error: ', err
+	#import ROOT
+	#err_total = ROOT.Double(0)
+	#yields_total = hBkg.obj.IntegralAndError(0,1000,err_total)
+	#print '*******************************  ', yields_total, ' +- ', err_total
 
     def _GetHistPref(self, name):
         '''Return the preference dictionary for a given component'''

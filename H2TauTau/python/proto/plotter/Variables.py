@@ -1,37 +1,46 @@
 from CMGTools.H2TauTau.proto.plotter.PlotConfigs import VariableCfg as VCfg
 
-from CMGTools.H2TauTau.proto.plotter.binning import binning_svfitMass_finer, binning_mttotal, binning_mttotal_fine
+from CMGTools.H2TauTau.proto.plotter.binning import binning_svfitMass_finer, my_binning
 
 generic_vars = [
     VCfg(name='_norm_', drawname='1.', binning={'nbinsx':5, 'xmin':-1.5, 'xmax':3.5}, unit='', xtitle='Normalisation'),
     VCfg(name='svfit_mass', binning=binning_svfitMass_finer, unit='GeV', xtitle='m_{#tau#tau}'),
     VCfg(name='svfit_transverse_mass', binning={'nbinsx':40, 'xmin':0., 'xmax':300.}, unit='GeV', xtitle='M_{T}^{SVFit}'),
     VCfg(name='mt_total', binning={'nbinsx':40, 'xmin':0., 'xmax':800.}, unit='GeV', xtitle='M_{T}^{total}'),
-    VCfg(name='mt_total_mssm', drawname='mt_total', binning=binning_mttotal, unit='GeV', xtitle='M_{T}^{total}'),
-    VCfg(name='mt_total_mssm_fine', drawname='mt_total', binning=binning_mttotal_fine, unit='GeV', xtitle='M_{T}^{total}'),
-    VCfg(name='max_mt', drawname='max(mt, mt_leg2)', binning={'nbinsx':60, 'xmin':0., 'xmax':600.}, unit='GeV', xtitle='max(M_{T} (leg 1), M_{T} (leg 2))'),
-    VCfg(name='mvis', binning=binning_svfitMass_finer, unit='GeV', xtitle='m_{vis}'),
+    VCfg(name='max_mt', drawname='max(mt, mt_leg2)', binning={'nbinsx':50, 'xmin':0., 'xmax':200.}, unit='GeV', xtitle='max(M_{T} (leg 1), M_{T} (leg 2))'),
+    #VCfg(name='mvis', binning=binning_svfitMass_finer, unit='GeV', xtitle='m_{vis}'),
+    #VCfg(name='mvis', binning=my_binning, unit='GeV', xtitle='m_{vis}'),
+    VCfg(name='mvis', binning={'nbinsx':10, 'xmin':0., 'xmax':100.}, unit='GeV', xtitle='m_{vis}'),
+    #VCfg(name='mvis', binning={'nbinsx':60, 'xmin':0., 'xmax':300.}, unit='GeV', xtitle='m_{vis}'),
     VCfg(name='mvis_fine', drawname='mvis', binning={'nbinsx':200, 'xmin':0., 'xmax':200.}, unit='GeV', xtitle='m_{vis}'),
     VCfg(name='mvis_extended', drawname='mvis', binning={'nbinsx':50, 'xmin':0., 'xmax':1000.}, unit='GeV', xtitle='m_{vis}'),
-    VCfg(name='mt', binning={'nbinsx':60, 'xmin':0., 'xmax':300.}, unit='GeV', xtitle='m_{T}'),
+    VCfg(name='mt', binning={'nbinsx':50, 'xmin':0., 'xmax':200.}, unit='GeV', xtitle='m_{T}'),
     VCfg(name='pfmet_mt1', binning={'nbinsx':50, 'xmin':0., 'xmax':200.}, unit='GeV', xtitle='m_{T} (PF)'),
     VCfg(name='puppimet_mt1', binning={'nbinsx':50, 'xmin':0., 'xmax':200.}, unit='GeV', xtitle='m_{T} (Puppet)'),
-    VCfg(name='mt_leg2', binning={'nbinsx':60, 'xmin':0., 'xmax':300.}, unit='GeV', xtitle='m_{T} leg 2'),
+    VCfg(name='mt_leg2', binning={'nbinsx':50, 'xmin':0., 'xmax':200.}, unit='GeV', xtitle='m_{T} leg 2'),
     VCfg(name='pfmet_mt2', binning={'nbinsx':50, 'xmin':0., 'xmax':200.}, unit='GeV', xtitle='m_{T} leg 2 (PF)'),
     VCfg(name='puppimet_mt2', binning={'nbinsx':50, 'xmin':0., 'xmax':200.}, unit='GeV', xtitle='m_{T} leg 2(Puppet)'),
-    VCfg(name='mt_sum', drawname='mt + mt_leg2', binning={'nbinsx':60, 'xmin':0., 'xmax':1000.}, unit='GeV', xtitle='Sum m_{T} (MET-leg1, MET-leg2)'),
+    VCfg(name='mt_sum', drawname='mt + mt_leg2', binning={'nbinsx':50, 'xmin':0., 'xmax':750.}, unit='GeV', xtitle='Sum m_{T} (MET-leg1, MET-leg2)'),
+    #VCfg(name='pfmet_sumMT', drawname='pfmet_mt1 + pfmet_mt2', binning={'nbinsx':25, 'xmin':0., 'xmax':250.}, unit='GeV', xtitle='Sum m_{T} (MET-leg1, MET-leg2) (PF)'),
+    VCfg(name='pfmet_sumMT', drawname='pfmet_mt1 + pfmet_mt2', binning={'nbinsx':60, 'xmin':0., 'xmax':600.}, unit='GeV', xtitle='#Sigma m_{T}^{#tau_{i}}'),
+    VCfg(name='sumPt', drawname='l1_pt + l2_pt', binning={'nbinsx':60, 'xmin':0., 'xmax':600.}, unit='GeV', xtitle='p_{T}^{tau_{1}}+p_{T}^{tau_{2}}'),
+    VCfg(name='ptDiff', drawname='l1_pt - l2_pt', binning={'nbinsx':60, 'xmin':0., 'xmax':600.}, unit='GeV', xtitle='p_{T}^{tau_{1}}-p_{T}^{tau_{2}}'),
     VCfg(name='n_vertices', binning={'nbinsx':51, 'xmin':-0.5, 'xmax':50.5}, unit=None, xtitle='N_{vertices}'),
     VCfg(name='rho', binning={'nbinsx':50, 'xmin':0., 'xmax':50.}, unit='GeV', xtitle='#rho'),
-    VCfg(name='n_jets', binning={'nbinsx':12, 'xmin':-0.5, 'xmax':11.5}, unit=None, xtitle='N_{jets}'),
+    VCfg(name='n_jets', binning={'nbinsx':10, 'xmin':-0.5, 'xmax':9.5}, unit=None, xtitle='N_{jets}'),
+    #VCfg(name='n_jets', binning={'nbinsx':12, 'xmin':-0.5, 'xmax':11.5}, unit=None, xtitle='N_{jets}'),
     VCfg(name='n_jets_20', binning={'nbinsx':12, 'xmin':-0.5, 'xmax':11.5}, unit=None, xtitle='N_{jets} (20 GeV)'),
     VCfg(name='n_jets_puid', binning={'nbinsx':12, 'xmin':-0.5, 'xmax':11.5}, unit=None, xtitle='N_{jets} (PU ID)'),
     VCfg(name='n_jets_csvl', binning={'nbinsx':12, 'xmin':-0.5, 'xmax':11.5}, unit=None, xtitle='N_{jets} (CSV loose; no SF)'),
-    VCfg(name='n_bjets', binning={'nbinsx':12, 'xmin':-0.5, 'xmax':11.5}, unit=None, xtitle='N_{b jets}'),
+    VCfg(name='n_bjets', binning={'nbinsx':10, 'xmin':0., 'xmax':10.}, unit=None, xtitle='N_{b jets}'),
+    #VCfg(name='n_bjets', binning={'nbinsx':12, 'xmin':-0.5, 'xmax':11.5}, unit=None, xtitle='N_{b jets}'),
     VCfg(name='met_phi', binning={'nbinsx':40, 'xmin':-3.141593, 'xmax':3.141593}, unit=None, xtitle='E_{T}^{miss} #Phi'),
-    VCfg(name='pthiggs', binning={'nbinsx':50, 'xmin':0., 'xmax':300.}, unit='GeV', xtitle='Higgs boson p_{T}'),
-    VCfg(name='met_pt', binning={'nbinsx':60, 'xmin':0., 'xmax':300.}, unit='GeV', xtitle='E_{T}^{miss}'),
-    VCfg(name='pfmet_pt', binning={'nbinsx':60, 'xmin':0., 'xmax':300.}, unit='GeV', xtitle='E_{T}^{miss} (PF)'),
-    VCfg(name='puppimet_pt', binning={'nbinsx':60, 'xmin':0., 'xmax':300.}, unit='GeV', xtitle='E_{T}^{miss} (Puppet)'),
+    VCfg(name='pthiggs', binning={'nbinsx':40, 'xmin':0., 'xmax':200.}, unit='GeV', xtitle='Higgs boson p_{T}'),
+    VCfg(name='met_pt', binning={'nbinsx':40, 'xmin':0., 'xmax':150.}, unit='GeV', xtitle='E_{T}^{miss}'),
+    VCfg(name='pfmet_pt', binning={'nbinsx':10, 'xmin':0., 'xmax':1000.}, unit='GeV', xtitle='p_{T}^{miss}'),
+    #VCfg(name='pfmet_pt', binning={'nbinsx':30, 'xmin':0., 'xmax':300.}, unit='GeV', xtitle='p_{T}^{miss}'),
+    #VCfg(name='pfmet_pt', binning={'nbinsx':40, 'xmin':0., 'xmax':150.}, unit='GeV', xtitle='E_{T}^{miss} (PF)'),
+    VCfg(name='puppimet_pt', binning={'nbinsx':40, 'xmin':0., 'xmax':150.}, unit='GeV', xtitle='E_{T}^{miss} (Puppet)'),
     VCfg(name='met_sig', drawname='met_pt/sqrt(met_cov00 + met_cov11)', binning={'nbinsx':50, 'xmin':0., 'xmax':15.}, unit='GeV', xtitle='MVA E_{T}^{miss} significance'),
     
     VCfg(name='vbf_mjj', binning={'nbinsx':40, 'xmin':0, 'xmax':1000.}, unit='GeV', xtitle='m_{jj}'),
@@ -60,19 +69,21 @@ generic_vars = [
     VCfg(name='jet2_csv', binning={'nbinsx':40, 'xmin':0., 'xmax':1.00001}, unit=None, xtitle='jet 2 CSV'),
     VCfg(name='bjet1_csv', binning={'nbinsx':40, 'xmin':0., 'xmax':1.00001}, unit=None, xtitle='b jet 1 CSV'),
     VCfg(name='bjet2_csv', binning={'nbinsx':40, 'xmin':0., 'xmax':1.00001}, unit=None, xtitle='b jet 2 CSV'),
-    VCfg(name='pzeta_vis', binning={'nbinsx':50, 'xmin':0., 'xmax':250.}, unit=None, xtitle='p^{#zeta}_{vis} (GeV)'),
-    VCfg(name='pzeta_met', binning={'nbinsx':50, 'xmin':-150., 'xmax':250.}, unit=None, xtitle='p^{#zeta}_{MET} (GeV)'),
+    VCfg(name='pzeta_vis', binning={'nbinsx':40, 'xmin':0., 'xmax':200.}, unit=None, xtitle='p^{#zeta}_{vis} (GeV)'),
+    VCfg(name='pzeta_met', binning={'nbinsx':40, 'xmin':-150., 'xmax':150.}, unit=None, xtitle='p^{#zeta}_{MET} (GeV)'),
     VCfg(name='pzeta_disc', binning={'nbinsx':40, 'xmin':-200., 'xmax':200.}, unit=None, xtitle='p^{#zeta}_{disc} (GeV)'),
 
     VCfg(name='delta_phi_j1_met', drawname='abs(TVector2::Phi_mpi_pi(met_phi - jet1_phi))+ 20*(jet1_phi<-50)', binning={'nbinsx':40, 'xmin':0, 'xmax':3.141593}, unit=None, xtitle='#Delta#Phi(E_{T}^{miss}, jet1) '),
     VCfg(name='delta_phi_j2_met', drawname='abs(TVector2::Phi_mpi_pi(met_phi - jet2_phi)) + 20*(jet2_phi<-50)', binning={'nbinsx':40, 'xmin':0, 'xmax':3.141593}, unit=None, xtitle='#Delta#Phi(E_{T}^{miss}, jet2)'),
-    # VCfg(name='min_delta_phi_j1j2_met', drawname='min(abs(TVector2::Phi_mpi_pi(met_phi - jet2_phi)) + 20*(jet2_phi<-50), abs(TVector2::Phi_mpi_pi(met_phi - jet1_phi))+ 20*(jet1_phi<-50))', binning={'nbinsx':40, 'xmin':0, 'xmax':3.141593}, unit=None, xtitle='min(#Delta#Phi(E_{T}^{miss}, jet1/2)'),
-    VCfg(name='delta_phi_l1l2_met', drawname="abs(TVector2::Phi_mpi_pi(TMath::ATan((l1_pt*sin(l1_phi) + l2_pt*sin(l2_phi))/(l1_pt*cos(l1_phi) + l2_pt*cos(l2_phi))) - met_phi))", binning={'nbinsx':40, 'xmin':0, 'xmax':3.141593}, unit=None, xtitle='#Delta#Phi(E_{T}^{miss}, l1+l2)'),
+    #VCfg(name='min_delta_phi_j1j2_met', drawname='min(max(minDphiMETJets, 0.), TVector2::Phi_mpi_pi(met_phi - l1_phi))', binning={'nbinsx':32, 'xmin':0, 'xmax':3.2}, unit=None, xtitle='min(#Delta#Phi(E_{T}^{miss}, jets/leptons)'),
+    VCfg(name='min_delta_phi_j1j2_met', drawname='min(abs(TVector2::Phi_mpi_pi(met_phi - jet2_phi)) + 20*(jet2_phi<-50), abs(TVector2::Phi_mpi_pi(met_phi - jet1_phi))+ 20*(jet1_phi<-50))', binning={'nbinsx':32, 'xmin':0, 'xmax':3.2}, unit=None, xtitle='min(#Delta#Phi(E_{T}^{miss}, jet1/2)'), ## expected that this is equal to the below variable, which is not. check on 28 May
+    VCfg(name='minDphiMETJets', binning={'nbinsx':32, 'xmin':0, 'xmax':3.2}, unit=None, xtitle='minDphiMETJets'),
+    #VCfg(name='min_delta_phi_tau1tau2_met', drawname='min(min(abs(TVector2::Phi_mpi_pi(met_phi - l1_phi)), abs(TVector2::Phi_mpi_pi(met_phi - l2_phi))),abs(minDphiMETJets))', binning={'nbinsx':32, 'xmin':0, 'xmax':3.2}, unit=None, xtitle='min(#Delta#Phi(E_{T}^{miss}, tau1/tau2)'),
+    VCfg(name='min_delta_phi_tau1tau2_met', drawname='min(min(abs(TVector2::Phi_mpi_pi(met_phi - l1_phi)), abs(TVector2::Phi_mpi_pi(met_phi - l2_phi))),min(abs(TVector2::Phi_mpi_pi(met_phi - jet1_phi))+100*(jet1_pt>40), abs(TVector2::Phi_mpi_pi(met_phi - jet2_phi))+100*(jet2_pt>40)))', binning={'nbinsx':32, 'xmin':0, 'xmax':3.2}, unit=None, xtitle='min(#Delta#Phi(E_{T}^{miss}, tau1/tau2)'),
+    VCfg(name='delta_phi_l1l2_met', drawname="abs(TVector2::Phi_mpi_pi(TMath::ATan((l1_pt*sin(l1_phi) + l2_pt*sin(l2_phi))/(l1_pt*cos(l1_phi) + l2_pt*cos(l2_phi))) - met_phi))", binning={'nbinsx':32, 'xmin':0, 'xmax':3.2}, unit=None, xtitle='#Delta#Phi(E_{T}^{miss}, l1+l2)'),
     # VCfg(name='pt_l1l2_div_pt_l1', drawname="sqrt(l1_pt**2 + l2_pt**2 + 2*l1_pt*l2_pt*(cos(l1_phi - l2_phi)))/l1_pt", binning={'nbinsx':40, 'xmin':0, 'xmax':2.}, unit=None, xtitle='p_{T}^{l1+l2}/p_{T}^{l1}'),
     # VCfg(name='pt_l1l2_div_pt_l2', drawname="sqrt(l1_pt**2 + l2_pt**2 + 2*l1_pt*l2_pt*(cos(l1_phi - l2_phi)))/l2_pt", binning={'nbinsx':50, 'xmin':0, 'xmax':10.}, unit=None, xtitle='p_{T}^{l1+l2}/p_{T}^{l2}'),
-    VCfg(name='dil_pt', drawname="dil_pt", binning={'nbinsx':50, 'xmin':0, 'xmax':250.}, unit='GeV', xtitle='p_{T}^{l1+l2}'),
-
-    VCfg(name='geninfo_nup', binning={'nbinsx':10, 'xmin':-0.5, 'xmax':9.5}, unit=None, xtitle='N_{partons}'),
+    VCfg(name='pt_l1l2', drawname="sqrt(l1_pt**2 + l2_pt**2 + 2*l1_pt*l2_pt*(cos(l1_phi - l2_phi)))", binning={'nbinsx':50, 'xmin':0, 'xmax':250.}, unit='GeV', xtitle='p_{T}^{l1+l2}'),
         
 
     # VCfg(name='jet1_chargedHadronMultiplicity', binning={'nbinsx':40, 'xmin':-0.5, 'xmax':39.5}, unit=None, xtitle='jet 1 N_{CH}'),
@@ -81,7 +92,7 @@ generic_vars = [
 ]
 
 muon_l1_vars = [
-    VCfg(name='l1_pt', binning={'nbinsx':40, 'xmin':0., 'xmax':100.}, unit='GeV', xtitle='muon p_{T}'),
+    # VCfg(name='l1_pt', binning={'nbinsx':40, 'xmin':0., 'xmax':100.}, unit='GeV', xtitle='muon p_{T}'),
     VCfg(name='l1_eta', binning={'nbinsx':20, 'xmin':-2.5, 'xmax':2.5}, unit=None, xtitle='muon #eta'),
     VCfg(name='l1_phi', binning={'nbinsx':40, 'xmin':-3.141593, 'xmax':3.141593}, unit=None, xtitle='muon #phi'),
     VCfg(name='l1_reliso05_03', drawname='log(abs(l1_reliso05_03)+0.004)', binning={'nbinsx':40, 'xmin':-6., 'xmax':0.}, unit='', xtitle='log(muon relative isolation cone 0.3)'),
@@ -95,7 +106,7 @@ muon_l1_vars = [
 ]
 
 electron_l1_vars = [
-    VCfg(name='l1_pt', binning={'nbinsx':40, 'xmin':0., 'xmax':100.}, unit='GeV', xtitle='electron p_{T}'),
+    # VCfg(name='l1_pt', binning={'nbinsx':40, 'xmin':0., 'xmax':100.}, unit='GeV', xtitle='electron p_{T}'),
     VCfg(name='l1_eta', binning={'nbinsx':20, 'xmin':-2.5, 'xmax':2.5}, unit=None, xtitle='electron #eta'),
     VCfg(name='l1_phi', binning={'nbinsx':40, 'xmin':-3.141593, 'xmax':3.141593}, unit=None, xtitle='electron #phi'),
     VCfg(name='l1_reliso05_04', drawname='log(abs(l1_reliso05_04)+0.004)', binning={'nbinsx':40, 'xmin':-6., 'xmax':0.}, unit='', xtitle='log(electron relative isolation cone 0.4)'),
@@ -113,7 +124,7 @@ electron_l1_vars = [
 ]
 
 tau_l1_vars = [
-    VCfg(name='l1_pt', binning={'nbinsx':50, 'xmin':0., 'xmax':400.}, unit='GeV', xtitle='tau_{1} p_{T}'),
+    VCfg(name='l1_pt', binning={'nbinsx':30, 'xmin':0., 'xmax':300.}, unit='GeV', xtitle='#tau_{1} p_{T}'),
     VCfg(name='l1_eta', binning={'nbinsx':20, 'xmin':-2.5, 'xmax':2.5}, unit=None, xtitle='tau_{1} #eta'),
     VCfg(name='l1_phi', binning={'nbinsx':40, 'xmin':-3.141593, 'xmax':3.141593}, unit=None, xtitle='tau_{1} #phi'),
     VCfg(name='l1_mt', drawname='mt', binning={'nbinsx':50, 'xmin':0., 'xmax':200.}, unit='GeV', xtitle='m_{T} #tau_{1}'),
@@ -127,12 +138,12 @@ tau_l1_vars = [
     VCfg(name='l1_byCombinedIsolationDeltaBetaCorrRaw3Hits', binning={'nbinsx':100, 'xmin':0., 'xmax':100.}, unit='GeV', xtitle='tau_{1} delta-beta corr. 3-hit isolation'),
     VCfg(name='l1_byIsolationMVArun2v1DBoldDMwLTraw', binning={'nbinsx':100, 'xmin':-1., 'xmax':1.}, unit='', xtitle='tau_{1} isolation MVA (old DM w/LT)'),
     VCfg(name='l1_byIsolationMVArun2v1DBdR03oldDMwLTraw', binning={'nbinsx':100, 'xmin':0., 'xmax':1.}, unit='', xtitle='tau_{1} isolation MVA (old DM w/LT cone 0.3)'),
-    VCfg(name='delta_phi_l1_met', drawname='abs(TVector2::Phi_mpi_pi(l1_phi - met_phi))', binning={'nbinsx':40, 'xmin':0, 'xmax':3.141593}, unit=None, xtitle='#Delta #phi (tau_{1}, MET)'),
+    VCfg(name='delta_phi_l1_met', drawname='abs(delta_phi_l1_met)', binning={'nbinsx':40, 'xmin':0, 'xmax':3.141593}, unit=None, xtitle='#Delta #phi (tau_{1}, MET)'),
     VCfg(name='mt_div_l1_pt', drawname='mt/l1_pt', binning={'nbinsx':40, 'xmin':0, 'xmax':7}, unit=None, xtitle='M_{T}/tau_{1} p_{T}'),
 ]
 
 tau_l2_vars = [
-    VCfg(name='l2_pt', binning={'nbinsx':50, 'xmin':0., 'xmax':250.}, unit='GeV', xtitle='tau p_{T}'),
+    VCfg(name='l2_pt', binning={'nbinsx':20, 'xmin':0., 'xmax':200.}, unit='GeV', xtitle='#tau_{2} p_{T}'),
     VCfg(name='l2_eta', binning={'nbinsx':20, 'xmin':-2.5, 'xmax':2.5}, unit=None, xtitle='tau #eta'),
     VCfg(name='l2_phi', binning={'nbinsx':40, 'xmin':-3.141593, 'xmax':3.141593}, unit=None, xtitle='tau #phi'),
     VCfg(name='l2_mt', drawname='mt_leg2', binning={'nbinsx':50, 'xmin':0., 'xmax':200.}, unit='GeV', xtitle='m_{T} #tau'),
@@ -178,10 +189,18 @@ tau_mu_special_vars = [
 ]
 
 tau_tau_special_vars = [
-    VCfg(name='mt2', binning={'nbinsx':50, 'xmin':0., 'xmax':500.}, unit='GeV', xtitle='m_{T2}'),
+    VCfg(name='dil_pt', binning={'nbinsx':30, 'xmin':0, 'xmax':300.}, unit='GeV', xtitle='Dilepton p_{T}'),
+    #VCfg(name='mt2', binning={'nbinsx':21, 'xmin':90., 'xmax':300.}, unit='GeV', xtitle='m_{T2}'),
+    VCfg(name='mt2', binning={'nbinsx':9, 'xmin':0., 'xmax':90.}, unit='GeV', xtitle='M_{T2}'),
+    #VCfg(name='mt2', binning={'nbinsx':30, 'xmin':0., 'xmax':300.}, unit='GeV', xtitle='M_{T2}'),
+    VCfg(name='mt2_lep', binning={'nbinsx':30, 'xmin':0., 'xmax':300.}, unit='GeV', xtitle='m_{T2} - lep'),
     VCfg(name='delta_eta_l1_l2', drawname='abs(l1_eta - l2_eta)', binning={'nbinsx':40, 'xmin':0, 'xmax':4.5}, unit=None, xtitle='#Delta#eta(#tau_{1}, #tau_{2})'),
     VCfg(name='delta_r_l1_l2', binning={'nbinsx':40, 'xmin':0, 'xmax':4.5}, unit=None, xtitle='#Delta R(#tau_{1}, #tau_{2})'),
-    VCfg(name='delta_phi_l1_l2', drawname='abs(TVector2::Phi_mpi_pi(l1_phi - l2_phi))', binning={'nbinsx':40, 'xmin':0., 'xmax':3.141593}, unit=None, xtitle='#Delta #phi (#tau_{1}, #tau_{2})'),
+    VCfg(name='delta_phi_l1_l2', drawname='abs(TVector2::Phi_mpi_pi(l1_phi - l2_phi))', binning={'nbinsx':32, 'xmin':0., 'xmax':3.2}, unit=None, xtitle='#Delta #phi (#tau_{1}, #tau_{2})'),
+    VCfg(name='l1_gen_match', binning={'nbinsx':10, 'xmin':0., 'xmax':10.}, unit=None, xtitle='tau_{1} gen match'),
+    VCfg(name='l2_gen_match', binning={'nbinsx':10, 'xmin':0., 'xmax':10.}, unit=None, xtitle='tau_{2} gen match'),
+    VCfg(name='l1_byIsolationMVArun2v1DBoldDMwLT', binning={'nbinsx':7, 'xmin':-0.5, 'xmax':6.5}, unit='', xtitle='tau_{1} isolation MVA (old DM w/LT)'),
+    VCfg(name='l2_byIsolationMVArun2v1DBoldDMwLT', binning={'nbinsx':7, 'xmin':-0.5, 'xmax':6.5}, unit='', xtitle='tau_{2} isolation MVA (old DM w/LT)'),
 ]
 
 mu_mu_special_vars = [
@@ -258,18 +277,10 @@ all_vars = generic_vars + muon_l1_vars + muon_l2_vars + tau_l2_vars + additional
 
 
 dict_all_vars = {}
-for v in all_vars:
+for v in tautau_vars:
+#for v in all_vars:
     dict_all_vars[v.name] = v
 
-dict_tautau_vars = {}
-for v in tautau_vars:
-    dict_tautau_vars[v.name] = v
-
-dict_channel_vars = {
-    'all':dict_all_vars,
-    'tautau':dict_tautau_vars
-}
-
-def getVars(names, channel='all'):
-    return [dict_channel_vars[channel][n] for n in names]
+def getVars(names):
+    return [dict_all_vars[n] for n in names]
     

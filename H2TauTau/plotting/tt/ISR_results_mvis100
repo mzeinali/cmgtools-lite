@@ -1,0 +1,144 @@
+[mzeinali@UI src]$ root SMS_SUSYRecommendedISR_mt2_corrected.C
+root [0] 
+Processing SMS_SUSYRecommendedISR_mt2_corrected.C...
+Number of initial entries: 2810031
++++++ mvis > 100 GeV +++++
+sr1,
+**** (400,1): 8.64573
+**** (400,1): 8.64573 +- 0.562944
+		**** (400,1) after reweighting: 8.41265 +- 0.547678
+		**** (400,1) rel sys unc %: -2.69588
+root [1] .q
+[mzeinali@UI src]$ vi SMS_SUSYRecommendedISR_mt2_corrected.C
+[mzeinali@UI src]$ root SMS_SUSYRecommendedISR_mt2_corrected.C
+root [0] 
+Processing SMS_SUSYRecommendedISR_mt2_corrected.C...
+Number of initial entries: 2810031
++++++ mvis > 100 GeV +++++
+sr1,
+**** (250,50): 10.1057
+**** (250,50): 10.1057 +- 1.55067
+		**** (250,50) after reweighting: 9.89192 +- 1.51893
+		**** (250,50) rel sys unc %: -2.11572
+root [1] .q
+[mzeinali@UI src]$ vi SMS_SUSYRecommendedISR_mt2_corrected.C
+[mzeinali@UI src]$ root SMS_SUSYRecommendedISR_mt2_corrected.C
+root [0] 
+Processing SMS_SUSYRecommendedISR_mt2_corrected.C...
+Number of initial entries: 2810031
++++++ mvis > 100 GeV +++++
+sr1,
+**** (200,100): 0
+**** (200,100): 0 +- 0
+		**** (200,100) after reweighting: 0 +- 0
+		**** (200,100) rel sys unc %: -nan
+root [1] .q
+[mzeinali@UI src]$ vi SMS_SUSYRecommendedISR_mt2_corrected.C
+[mzeinali@UI src]$ root SMS_SUSYRecommendedISR_mt2_corrected.C
+root [0] 
+Processing SMS_SUSYRecommendedISR_mt2_corrected.C...
+Number of initial entries: 2810031
++++++ mvis > 100 GeV +++++
+sr2,
+**** (200,100): 0.487637
+**** (200,100): 0.487637 +- 0.487637
+		**** (200,100) after reweighting: 0.499623 +- 0.499623
+		**** (200,100) rel sys unc %: 2.45817
+root [1] .q
+[mzeinali@UI src]$ vi SMS_SUSYRecommendedISR_mt2_corrected.C
+[mzeinali@UI src]$ root SMS_SUSYRecommendedISR_mt2_corrected.C
+root [0] 
+Processing SMS_SUSYRecommendedISR_mt2_corrected.C...
+Number of initial entries: 2810031
++++++ mvis > 100 GeV +++++
+sr2,
+**** (250,50): 7.17498
+**** (250,50): 7.17498 +- 1.23797
+		**** (250,50) after reweighting: 7.35082 +- 1.26931
+		**** (250,50) rel sys unc %: 2.45075
+root [1] .q
+[mzeinali@UI src]$ vi SMS_SUSYRecommendedISR_mt2_corrected.C
+[mzeinali@UI src]$ root SMS_SUSYRecommendedISR_mt2_corrected.C
+root [0] 
+Processing SMS_SUSYRecommendedISR_mt2_corrected.C...
+Number of initial entries: 2810031
++++++ mvis > 100 GeV +++++
+sr2,
+**** (400,1): 9.94464
+**** (400,1): 9.94464 +- 0.812097
+		**** (400,1) after reweighting: 10.217 +- 0.832891
+		**** (400,1) rel sys unc %: 2.73911
+root [1] .q
+[mzeinali@UI src]$ vi SMS_SUSYRecommendedISR_mt2_corrected.C
+[mzeinali@UI src]$ root SMS_SUSYRecommendedISR_mt2_corrected.C
+root [0] 
+Processing SMS_SUSYRecommendedISR_mt2_corrected.C...
+Number of initial entries: 2810031
++++++ mvis > 100 GeV +++++
+sr3,
+**** (400,1): 4.28057
+**** (400,1): 4.28057 +- 0.462694
+		**** (400,1) after reweighting: 4.16424 +- 0.449775
+		**** (400,1) rel sys unc %: -2.71768
+root [1] .q
+[mzeinali@UI src]$ vi SMS_SUSYRecommendedISR_mt2_corrected.C
+[mzeinali@UI src]$ root SMS_SUSYRecommendedISR_mt2_corrected.C
+root [0] 
+Processing SMS_SUSYRecommendedISR_mt2_corrected.C...
+Number of initial entries: 2810031
++++++ mvis > 100 GeV +++++
+sr3,
+**** (250,50): 11.9022
+**** (250,50): 11.9022 +- 1.78895
+		**** (250,50) after reweighting: 11.6527 +- 1.75064
+		**** (250,50) rel sys unc %: -2.09574
+root [1] .q
+[mzeinali@UI src]$ vi SMS_SUSYRecommendedISR_mt2_corrected.C
+[mzeinali@UI src]$ root SMS_SUSYRecommendedISR_mt2_corrected.C
+root [0] 
+Processing SMS_SUSYRecommendedISR_mt2_corrected.C...
+Number of initial entries: 2810031
++++++ mvis > 100 GeV +++++
+sr3,
+**** (200,100): 3.22349
+**** (200,100): 3.22349 +- 1.21508
+		**** (200,100) after reweighting: 3.13947 +- 1.18341
+		**** (200,100) rel sys unc %: -2.6063
+root [1] .q
+[mzeinali@UI src]$ vi SMS_SUSYRecommendedISR_mt2_corrected.C
+[mzeinali@UI src]$ root SMS_SUSYRecommendedISR_mt2_corrected.C
+root [0] 
+Processing SMS_SUSYRecommendedISR_mt2_corrected.C...
+Number of initial entries: 2810031
++++++ mvis > 100 GeV +++++
+sr4,
+**** (200,100): 2.64357
+**** (200,100): 2.64357 +- 1.09227
+		**** (200,100) after reweighting: 2.74912 +- 1.135
+		**** (200,100) rel sys unc %: 3.99268
+root [1] .q
+[mzeinali@UI src]$ vi SMS_SUSYRecommendedISR_mt2_corrected.C
+[mzeinali@UI src]$ root SMS_SUSYRecommendedISR_mt2_corrected.C
+root [0] 
+Processing SMS_SUSYRecommendedISR_mt2_corrected.C...
+Number of initial entries: 2810031
++++++ mvis > 100 GeV +++++
+sr4,
+**** (250,50): 6.84133
+**** (250,50): 6.84133 +- 1.27216
+		**** (250,50) after reweighting: 7.11331 +- 1.32017
+		**** (250,50) rel sys unc %: 3.97565
+root [1] .q
+[mzeinali@UI src]$ vi SMS_SUSYRecommendedISR_mt2_corrected.C
+[mzeinali@UI src]$ root SMS_SUSYRecommendedISR_mt2_corrected.C
+root [0] 
+Processing SMS_SUSYRecommendedISR_mt2_corrected.C...
+Number of initial entries: 2810031
++++++ mvis > 100 GeV +++++
+sr4,
+**** (400,1): 4.68972
+**** (400,1): 4.68972 +- 0.525642
+		**** (400,1) after reweighting: 4.87254 +- 0.565067
+		**** (400,1) rel sys unc %: 3.89838
+root [1] .q
+
